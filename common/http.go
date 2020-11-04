@@ -9,7 +9,7 @@ var (
 )
 
 type HttpConfig struct {
-	Port int
+	Port string
 }
 
 

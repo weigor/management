@@ -21,10 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5364b7ba-4229-4a12-8627-3f1be3cf0992" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/mysql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/http.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/http.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config/http.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server/handle.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/handle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server/register/build.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/register/build.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +59,12 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$" />

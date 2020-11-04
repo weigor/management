@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
+	"management/common"
 	"management/log"
 	"net/http"
 )
@@ -20,7 +21,7 @@ func NewServer() *Server {
 	}
 	server.ginEngine = server.newRouter()
 
-	server.httpServer = &http.Server{Addr: ":"+ getHttpPort(), Handler: server.ginEngine}
+	server.httpServer = &http.Server{Addr: ":" + getHttpPort(), Handler: server.ginEngine}
 
 	log.Logger.Info("start", zap.Any("addr", server.httpServer.Addr))
 	return server
@@ -39,14 +40,11 @@ func (s *Server) Shutdown(ctx context.Context) error {
 	return s.httpServer.Shutdown(ctx)
 }
 
-func getHttpPort () string {
-	cfg := common.GetHttpConfig()
+func getHttpPort() string {
+	cfg := common.HttpInit()
 	if cfg != nil && cfg.Port != "" {
 		return cfg.Port
 	}
 
 	return "3000"
 }
-
-
-

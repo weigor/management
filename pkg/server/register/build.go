@@ -1,15 +1,17 @@
 package register
 
-type Service struct {
+import "management/pkg/service"
 
+type Service struct {
+	UserService *service.UserService
 }
 
 func NewService() *Service {
 	s := &Service{}
-	buildMysql(s)
+	buildService(s)
 	return s
 }
 
-func buildMysql(s *Service) {
+func buildService(s *Service) {
 
 }
