@@ -1,0 +1,7 @@
+[Mysql]
+userName = "root"
+passWord = "root"
+host = "127.0.0.1"
+port = 3306
+dbName = "management"
+timeout = "10s"

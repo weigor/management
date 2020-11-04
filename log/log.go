@@ -1,17 +1,33 @@
 package log
 
 import (
+	"flag"
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap/zapcore"
+	"go.uber.org/zap"
+	"os"
 )
-var Logger *zap.Logger
-func NewLogger(filePath string, level zapcore.Level, maxSize int, maxBackups int, maxAge int, compress bool, serviceName string) *zap.Logger {
-	core := newCore(filePath, level, maxSize, maxBackups, maxAge, compress)
-	return zap.New(core, zap.AddCaller(), zap.Development(), zap.Fields(zap.String("serviceName", serviceName)))
+
+var (
+	Logger   *zap.Logger
+	filePath string
+)
+
+func addFlag() {
+	filePath = os.Getenv("LOG_DIR")
+	flag.StringVar(&filePath, "log.name", filePath, "")
 }
 
+func init() {
+	addFlag()
+}
+
+func NewLogger(filePath string, level zapcore.Level, maxSize int, maxBackups int, maxAge int, compress bool, serviceName string) *zap.Logger {
+	core := newCore(filePath, level, maxSize, maxBackups, maxAge, compress)
+	return zap.New(core, zap.AddCaller(), zap.Development(), zap.Fields(zap.String("management", serviceName)))
+}
 func newCore(filePath string, level zapcore.Level, maxSize int, maxBackups int, maxAge int, compress bool) zapcore.Core {
-	//日志文件路径配置2
+	//日志文件路径配置
 	hook := lumberjack.Logger{
 		Filename:   filePath,   // 日志文件路径
 		MaxSize:    maxSize,    // 每个日志文件保存的最大尺寸 单位：M
@@ -44,3 +60,13 @@ func newCore(filePath string, level zapcore.Level, maxSize int, maxBackups int, 
 	)
 }
 
+func Init() {
+	Logger = NewLogger(filePath, zapcore.InfoLevel, 128, 30, 7, true, "management")
+}
+
+func LoggerEnd() {
+	if Logger == nil {
+		return
+	}
+	_ = Logger.Sync()
+}
