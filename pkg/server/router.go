@@ -8,10 +8,10 @@ func (s *Server) newRouter() *gin.Engine {
 
 	group := e.Group("/api/")
 	{
-		group.POST("user/list", s.handler.QueryMachineList())
-		group.POST("user/delete", s.handler.DeleteMachine())
-		group.POST("user/update", s.handler.UpdateMachine())
-		group.POST("user/create", s.handler.CreateMachine())
+		group.POST("user/list", s.handler.QueryUserList())
+		group.POST("user/delete", s.handler.DeleteUser())
+		group.POST("user/update", s.handler.UpdateUser())
+		group.POST("user/create", s.handler.CreateUser())
 
 	}
 	return e

@@ -43,7 +43,6 @@ func MysqlInit() *Orm {
 	if err != nil {
 		panic("连接数据库失败, error=" + err.Error())
 	}
-	defer db.Close()
 	return &Orm{
 		DB: db,
 	}

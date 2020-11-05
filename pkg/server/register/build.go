@@ -1,6 +1,10 @@
 package register
 
-import "management/pkg/service"
+import (
+	"management/common"
+	dao "management/pkg/dao"
+	service "management/pkg/service"
+)
 
 type Service struct {
 	UserService *service.UserService
@@ -13,5 +17,8 @@ func NewService() *Service {
 }
 
 func buildService(s *Service) {
-
+	orm := common.MysqlInit()
+	userDao := dao.NewUserDAO(orm)
+	userService := service.NewUserService(userDao)
+	s.UserService = userService
 }

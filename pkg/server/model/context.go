@@ -1,8 +1,10 @@
 package model
 
 type UserCtx struct {
-	Req    interface{}
-	Result interface{}
+	Req      interface{}
+	Result   interface{}
+	Page     int
+	PageSize int
 }
 
 func (q *UserCtx) Param() interface{} {
@@ -15,4 +17,11 @@ func (q *UserCtx) GetResult() interface{} {
 
 func (q *UserCtx) SetResult(t interface{}) {
 	q.Result = t
+}
+func (q *UserCtx) GetPage() int {
+	return q.Page
+}
+
+func (q *UserCtx) GetPageSize() int {
+	return q.PageSize
 }

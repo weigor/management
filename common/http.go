@@ -14,7 +14,7 @@ type HttpConfig struct {
 
 
 func init() {
-	flag.StringVar(&httpPath, "conf", "./config/http.toml", "")
+	flag.StringVar(&httpPath, "confs", "./config/http.toml", "")
 }
 
 func HttpInit() *HttpConfig {

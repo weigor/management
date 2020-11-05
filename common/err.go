@@ -3,9 +3,8 @@ package common
 import "errors"
 
 var (
-	ParamsParseErr    = errors.New("params parse error")
-	ParamsValidateErr = errors.New("params validate error")
-	ParamsInvalidErr  = errors.New("param invalid")
-
+	ParamsValidateErr = errors.New("property validation error")
+	ParamsInvalidErr  = errors.New("property resolution failed")
+	SystemErr  = errors.New("system error")
+	UpdateErr         = errors.New("姓名或身份证已被注册，请重新查看")
 )
-

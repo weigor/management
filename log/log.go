@@ -15,6 +15,9 @@ var (
 
 func addFlag() {
 	filePath = os.Getenv("LOG_DIR")
+	if filePath == "" {
+		filePath = "./logs/main.log"
+	}
 	flag.StringVar(&filePath, "log.name", filePath, "")
 }
 
