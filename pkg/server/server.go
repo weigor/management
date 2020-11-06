@@ -45,6 +45,5 @@ func getHttpPort() string {
 	if cfg != nil && cfg.Port != "" {
 		return cfg.Port
 	}
-
-	return "3000"
+	return "8888"
 }
