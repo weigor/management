@@ -8,14 +8,11 @@ type UserReq struct {
 	Age      uint   `json:"age" name:"年龄"`
 	Tel      string `json:"tel" name:"手机号"`
 	Addr     string `json:"addr" name:"地址"`
-	Card     string `json:"card" name:"身份证"`
 	Id       uint   `json:"id"`
 }
 
 func (r *UserReq) CreateVerification() error {
 	switch {
-	case r.Card == "":
-		return errors.New("card is isValid")
 	case r.UserName == "":
 		return errors.New("username is isValid")
 	case r.PassWord == "":
@@ -33,8 +30,6 @@ func (r *UserReq) UpdateVerification() error {
 	switch {
 	case r.Id <= 0:
 		return errors.New("id is isValid")
-	case r.Card == "":
-		return errors.New("card is isValid")
 	case r.UserName == "":
 		return errors.New("username is isValid")
 	case r.PassWord == "":

@@ -43,5 +43,5 @@ func (n *UserService) Delete(ctx UserCtx) error {
 }
 
 func (n *UserService) BatchUpdate(ctx UserCtx) error {
-	return n.UserDao.BatchUpdateUser(ctx.Param().([]*model.User))
+	return n.UserDao.BatchUpdateUsers(ctx.Param().([]*model.User))
 }

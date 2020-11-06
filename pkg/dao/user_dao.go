@@ -16,7 +16,7 @@ func NewUserDAO(db *common.Orm) *UserDAO {
 
 func (dao *UserDAO) CreateUser(user *model.User) error {
 	temp := &model.User{}
-	err := dao.db.Where("card=?", user.UserName).Last(&temp).Error
+	err := dao.db.Where("user_name=?", user.UserName).Last(&temp).Error
 	if err != nil && err != gorm.ErrRecordNotFound {
 		return err
 	}
@@ -39,7 +39,7 @@ func (dao *UserDAO) QueryUserList(user *model.User, pageNo, pageSize int) ([]*mo
 
 func (dao *UserDAO) UpdateUser(user *model.User) error {
 	temp := &model.User{}
-	err := dao.db.Where("card=?", user.UserName).Last(&temp).Error
+	err := dao.db.Where("user_name=?", user.UserName).Last(&temp).Error
 	if err != nil && err != gorm.ErrRecordNotFound {
 		return err
 	}

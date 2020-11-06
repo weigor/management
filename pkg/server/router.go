@@ -12,6 +12,7 @@ func (s *Server) newRouter() *gin.Engine {
 		group.POST("user/delete", s.handler.DeleteUser())
 		group.POST("user/update", s.handler.UpdateUser())
 		group.POST("user/create", s.handler.CreateUser())
+		group.POST("user/batchUpdate", s.handler.BatchUpdateBatch())
 
 	}
 	return e
