@@ -1,0 +1,6 @@
+{"level":"info","time":"2020-11-06T09:30:37.396+0800","linenum":"/home/ww/go/src/management/cmd/main.go:19","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-06T09:30:37.399+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"warn","time":"2020-11-06T09:30:37.399+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:32","msg":"start gin server failed","management":"management","error":"listen tcp :8080: bind: address already in use"}
+{"level":"info","time":"2020-11-06T09:30:37.399+0800","linenum":"/home/ww/go/src/management/cmd/main.go:22","msg":"","management":"management","error":"listen tcp :8080: bind: address already in use"}
+{"level":"info","time":"2020-11-06T09:30:54.455+0800","linenum":"/home/ww/go/src/management/cmd/main.go:19","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-06T09:30:54.458+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}

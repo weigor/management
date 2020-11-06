@@ -1,10 +1,9 @@
 package log
 
 import (
-	"flag"
 	"github.com/natefinch/lumberjack"
-	"go.uber.org/zap/zapcore"
 	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 	"os"
 )
 
@@ -16,9 +15,8 @@ var (
 func addFlag() {
 	filePath = os.Getenv("LOG_DIR")
 	if filePath == "" {
-		filePath = "./logs/main.log"
+		filePath = "./logs/management.log"
 	}
-	flag.StringVar(&filePath, "log.name", filePath, "")
 }
 
 func init() {

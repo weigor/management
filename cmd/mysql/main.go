@@ -91,8 +91,8 @@ func main() {
 			}
 		}
 		defer db.Close()
-		default:
-		panic(fmt.Sprintf("no support do:%s", do))
+	default:
+		panic(fmt.Sprintf("nothing to do:%s", do))
 	}
 }
 

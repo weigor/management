@@ -25,7 +25,7 @@ type Config struct {
 }
 
 func init() {
-	flag.StringVar(&dbPath, "conf", "./config/db.toml", "")
+	flag.StringVar(&dbPath, "conf", "", "")
 }
 
 type Orm struct {
