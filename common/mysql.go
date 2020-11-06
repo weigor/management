@@ -47,3 +47,9 @@ func MysqlInit() *Orm {
 		DB: db,
 	}
 }
+
+func TestMysqlInit() *Orm {
+	flag.Set("conf", "../../config/db.toml")
+	flag.Parse()
+	return MysqlInit()
+}

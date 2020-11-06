@@ -21,12 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5364b7ba-4229-4a12-8627-3f1be3cf0992" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/http.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config/http.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/server/handle.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/handle.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/server/register/build.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/register/build.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/server/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/err.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/err.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +71,72 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
+  <component name="RunManager" selected="Go Test.TestBatchUpdate in management/pkg/dao">
+    <configuration name="TestBatchUpdate in management/pkg/dao" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="management" />
+      <working_directory value="$PROJECT_DIR$/pkg/dao" />
+      <parameters value=" -testify.m ^TestBatchUpdate$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="management/pkg/dao" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestCreate in management/pkg/dao" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="management" />
+      <working_directory value="$PROJECT_DIR$/pkg/dao" />
+      <parameters value=" -testify.m ^TestCreate$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="management/pkg/dao" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDelete in management/pkg/dao" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="management" />
+      <working_directory value="$PROJECT_DIR$/pkg/dao" />
+      <parameters value=" -testify.m ^TestDelete$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="management/pkg/dao" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestQuery in management/pkg/dao" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="management" />
+      <working_directory value="$PROJECT_DIR$/pkg/dao" />
+      <parameters value=" -testify.m ^TestQuery$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="management/pkg/dao" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUpdate in management/pkg/dao" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="management" />
+      <working_directory value="$PROJECT_DIR$/pkg/dao" />
+      <parameters value=" -testify.m ^TestUpdate$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="management/pkg/dao" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestBatchUpdate in management/pkg/dao" />
+        <item itemvalue="Go Test.TestDelete in management/pkg/dao" />
+        <item itemvalue="Go Test.TestUpdate in management/pkg/dao" />
+        <item itemvalue="Go Test.TestQuery in management/pkg/dao" />
+        <item itemvalue="Go Test.TestCreate in management/pkg/dao" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
@@ -87,11 +150,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state width="1794" height="259" key="GridCell.Tab.0.bottom" timestamp="1604634861242">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1794" height="259" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604634861242" />
+    <state width="1794" height="259" key="GridCell.Tab.0.center" timestamp="1604634861242">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1794" height="259" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604634861242" />
+    <state width="1794" height="259" key="GridCell.Tab.0.left" timestamp="1604634861242">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1794" height="259" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604634861242" />
+    <state width="1794" height="259" key="GridCell.Tab.0.right" timestamp="1604634861242">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1794" height="259" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604634861242" />
     <state x="477" y="188" width="1037" height="737" key="SettingsEditor" timestamp="1604463208537">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -104,5 +184,9 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="753" y="444" width="476" height="226" key="git4idea.remote.GitConfigureRemotesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1604462957403" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604634211651">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1604634211651" />
   </component>
 </project>
