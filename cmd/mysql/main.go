@@ -11,6 +11,7 @@ import (
 
 var (
 	dbPath string
+	do     string
 )
 
 type Mysql struct {
@@ -25,13 +26,13 @@ type Config struct {
 	Mysql *Mysql
 }
 
-func init() {
-	flag.StringVar(&dbPath, "cont", "./config/db.toml", "")
-}
-
 type Orm struct {
 	*gorm.DB
 	*Config
+}
+
+func init() {
+	flag.StringVar(&dbPath, "db", "", "")
 }
 
 func MysqlInit(s string) *Orm {
@@ -56,7 +57,11 @@ func MysqlInit(s string) *Orm {
 	}
 }
 
-var do string
+func tables() []interface{} {
+	return []interface{}{
+		&model.User{},
+	}
+}
 
 func main() {
 	flag.StringVar(&do, "do", "", "do")
@@ -93,11 +98,5 @@ func main() {
 		defer db.Close()
 	default:
 		panic(fmt.Sprintf("nothing to do:%s", do))
-	}
-}
-
-func tables() []interface{} {
-	return []interface{}{
-		&model.User{},
 	}
 }
