@@ -16,15 +16,13 @@ import (
 func main() {
 	flag.Parse()
 	log.Init()
-	log.Logger.Info("",zap.String("log","启动成功"))
+	defer log.LoggerEnd()
+	log.Logger.Info("", zap.String("log", "启动成功"))
 	t := server.NewServer()
 	if err := t.Start(); err != nil {
-		log.Logger.Info("",zap.Error(err))
-
+		log.Logger.Info("", zap.Error(err))
 		panic(fmt.Sprintf("err: %s", err))
 	}
-
-	defer log.LoggerEnd()
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, syscall.SIGHUP, syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGINT)
 	for {
