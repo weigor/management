@@ -4,6 +4,8 @@ import (
 	"crypto/rsa"
 	"errors"
 	"github.com/dgrijalva/jwt-go"
+	"go.uber.org/zap"
+	"management/log"
 )
 
 type Jwt struct {
@@ -54,7 +56,7 @@ func (t *Jwt) claimsFromToken(tokenString string) (jwt.MapClaims, error) {
 	// parse token
 	jwtToken, err := jwt.ParseWithClaims(tokenString, jwt.MapClaims{}, func(token *jwt.Token) (i interface{}, e error) {
 		if _, ok := token.Method.(*jwt.SigningMethodRSA); !ok {
-			// todo: log error
+			log.Logger.Error("", zap.String("token", "token解析错误"))
 			return
 		}
 		return t.PublicKey, nil
