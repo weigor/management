@@ -1,8 +1,10 @@
 package common
 
 import (
+	"context"
 	"flag"
 	"github.com/BurntSushi/toml"
+	"github.com/go-redis/redis/v8"
 )
 
 var (
@@ -10,26 +12,32 @@ var (
 )
 
 type RedisConfig struct {
-	Addr     string
-	Username string
-	Password string
-	DB       int
+	Url string
+	DB  int
 }
 
 func init() {
 	flag.StringVar(&redisPath, "redisconf", "./config/redis.toml", "")
 }
 
-func RedisInit() *RedisConfig {
+func RedisInit() *redis.Client {
 	var conf RedisConfig
 	_, err := toml.DecodeFile(redisPath, &conf)
 	if err != nil {
 		panic(err)
 	}
-	return &RedisConfig{
-		Addr:     conf.Addr,
-		Username: conf.Username,
-		Password: conf.Password,
-		DB:       conf.DB,
+	cli := redis.NewClient(&redis.Options{
+		Addr: conf.Url,
+		DB:   conf.DB,
+	})
+	if err := cli.Ping(context.Background()).Err(); err != nil {
+		panic(err)
 	}
+	return cli
+}
+
+func TestGetRedisCli() *redis.Client {
+	flag.Set("conf", "../../config/redis.toml")
+	flag.Parse()
+	return RedisInit()
 }
