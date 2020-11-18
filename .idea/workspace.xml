@@ -21,6 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5364b7ba-4229-4a12-8627-3f1be3cf0992" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/gin_response.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/gin_response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/management.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/management.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/dao/user_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/dao/user_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server/handle.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/handle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server/model/server_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/model/server_model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/service/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/service/user_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,18 +64,18 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/model" />
+    <property name="last_opened_file_path" value="$USER_HOME$/下载/moban3102" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/model" />
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pkg" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/model" />
+      <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -153,22 +164,30 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1794" height="259" key="GridCell.Tab.0.bottom" timestamp="1604634960667">
+    <state x="686" y="346" width="610" height="421" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605004056595">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1794" height="259" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604634960667" />
-    <state width="1794" height="259" key="GridCell.Tab.0.center" timestamp="1604634960666">
+    <state x="686" y="346" width="610" height="421" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1605004056595" />
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605251624538">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1794" height="259" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604634960666" />
-    <state width="1794" height="259" key="GridCell.Tab.0.left" timestamp="1604634960665">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1605251624538" />
+    <state width="1794" height="259" key="GridCell.Tab.0.bottom" timestamp="1604886015497">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1794" height="259" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604634960665" />
-    <state width="1794" height="259" key="GridCell.Tab.0.right" timestamp="1604634960667">
+    <state width="1794" height="259" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604886015497" />
+    <state width="1794" height="259" key="GridCell.Tab.0.center" timestamp="1604886015495">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1794" height="259" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604634960667" />
+    <state width="1794" height="259" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604886015495" />
+    <state width="1794" height="259" key="GridCell.Tab.0.left" timestamp="1604886015494">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1794" height="259" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604886015494" />
+    <state width="1794" height="259" key="GridCell.Tab.0.right" timestamp="1604886015496">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1794" height="259" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604886015496" />
     <state x="477" y="188" width="1037" height="737" key="SettingsEditor" timestamp="1604463208537">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

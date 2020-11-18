@@ -4,3 +4,74 @@
 {"level":"info","time":"2020-11-06T09:32:25.665+0800","linenum":"/home/ww/go/src/management/cmd/main.go:22","msg":"","management":"management","error":"listen tcp :8080: bind: address already in use"}
 {"level":"info","time":"2020-11-06T09:32:38.982+0800","linenum":"/home/ww/go/src/management/cmd/main.go:19","msg":"","management":"management","log":"启动成功"}
 {"level":"info","time":"2020-11-06T09:32:38.983+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-13T14:53:05.897+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T14:55:40.228+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T14:55:40.231+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-13T14:57:04.523+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T14:57:04.524+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-13T14:57:59.465+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:232","msg":"#QueryUserList ","management":"management","req":{"username":"66","PassWord":"77","age":0,"tel":"","addr":"","card":"","page_no":0},"error":"record not found"}
+{"level":"error","time":"2020-11-13T14:58:22.786+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:232","msg":"#QueryUserList ","management":"management","req":{"username":"zhangliang2","PassWord":"77","age":0,"tel":"","addr":"","card":"","page_no":0},"error":"record not found"}
+{"level":"info","time":"2020-11-13T15:50:15.671+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T15:50:15.672+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-13T15:56:37.359+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:216","msg":"#QueryUserList property resolution failed ","management":"management","error":"invalid character 'u' looking for beginning of value"}
+{"level":"error","time":"2020-11-13T15:56:56.304+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:216","msg":"#QueryUserList property resolution failed ","management":"management","error":"invalid character 'u' looking for beginning of value"}
+{"level":"error","time":"2020-11-13T15:57:52.888+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:216","msg":"#QueryUserList property resolution failed ","management":"management","error":"invalid character 'u' looking for beginning of value"}
+{"level":"info","time":"2020-11-13T15:58:53.404+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T15:58:53.405+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-13T15:59:03.012+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:216","msg":"#QueryUserList property resolution failed ","management":"management","error":"invalid character 'u' looking for beginning of value"}
+{"level":"info","time":"2020-11-13T16:00:22.634+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T16:00:22.634+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-13T16:00:32.874+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:216","msg":"#QueryUserList property resolution failed ","management":"management","error":"invalid character 'u' looking for beginning of value"}
+{"level":"info","time":"2020-11-13T16:03:55.178+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T16:03:55.179+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-13T16:04:08.967+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:216","msg":"#Login property resolution failed ","management":"management","error":"invalid character 'u' looking for beginning of value"}
+{"level":"error","time":"2020-11-13T16:10:51.288+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:216","msg":"#Login property resolution failed ","management":"management","error":"invalid character 'u' looking for beginning of value"}
+{"level":"info","time":"2020-11-13T16:55:41.476+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T16:55:41.477+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-13T16:57:56.691+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T16:57:56.692+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-13T16:58:47.001+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T16:58:47.001+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-13T16:59:02.059+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:232","msg":"#Login ","management":"management","req":{"username":"12","password":"12","age":0,"tel":"","addr":"","id":0},"error":"record not found"}
+{"level":"info","time":"2020-11-13T17:19:19.178+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T17:19:19.179+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-13T17:33:26.112+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T17:33:26.113+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-13T23:12:14.011+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-13T23:12:14.142+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"warn","time":"2020-11-13T23:12:14.142+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:32","msg":"start gin server failed","management":"management","error":"listen tcp :8080: bind: address already in use"}
+{"level":"info","time":"2020-11-13T23:12:14.142+0800","linenum":"/home/ww/go/src/management/cmd/main.go:23","msg":"","management":"management","error":"listen tcp :8080: bind: address already in use"}
+{"level":"info","time":"2020-11-18T10:17:09.403+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:17:53.206+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:18:36.710+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:19:56.135+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:23:04.965+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:23:04.967+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-18T10:31:41.874+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:31:41.877+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-18T10:33:13.651+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:33:13.654+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-18T10:35:56.912+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:35:56.913+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-18T10:36:26.552+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:36:26.555+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-18T10:39:19.885+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:39:19.886+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-18T10:42:29.772+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:42:29.773+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-18T10:46:15.398+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:46:15.399+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"warn","time":"2020-11-18T10:48:15.630+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:46","msg":"RsaDecrypt","management":"management","error":"illegal base64 data at input byte 0"}
+{"level":"info","time":"2020-11-18T10:50:09.462+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:50:09.462+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-18T10:50:15.583+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:301","msg":"#Login ","management":"management","req":{"username":"gg","password":"123","age":0,"tel":"","addr":"","id":0},"error":"Error 1054: Unknown column 'username' in 'where clause'"}
+{"level":"info","time":"2020-11-18T10:51:03.035+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:51:03.036+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-18T10:52:34.660+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:52:34.663+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-18T10:52:40.869+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:301","msg":"#Login ","management":"management","req":{"username":"gg","password":"123","age":0,"tel":"","addr":"","id":0},"error":"Error 1054: Unknown column 'username' in 'field list'"}
+{"level":"info","time":"2020-11-18T10:54:52.946+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:54:52.949+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"error","time":"2020-11-18T10:54:59.633+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:301","msg":"#Login ","management":"management","req":{"username":"gg","password":"123","age":0,"tel":"","addr":"","id":0},"error":"Error 1054: Unknown column 'username' in 'field list'"}
+{"level":"info","time":"2020-11-18T10:57:14.426+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-18T10:57:14.429+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}

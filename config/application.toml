@@ -1,0 +1,27 @@
+ jwt_secret ="-----BEGIN RSA PRIVATE KEY-----
+              MIIEpgIBAAKCAQEA0CXaTQE4ifUm2+tlH1oBLif6yWT7vRnnCqEvX8JUcmLQMrVu
+              9WVMZbKDHphGMt6dFtQpCaXcrjPyPLqouel3lbro8vgIuPNSoeE1OZVbVWElvZ2V
+              pEvSA1rPe0bZ5F6A99Ts0Rz6uulVQkIkMQoxc4KFgrmBk+3a3VALsZLcEHSCsnnZ
+              hnr6jYYSdh2DQvhIFqNaptFkEtb/xLLP9f0Xv2iVIq7wpMWByficDjzmuWxVeor+
+              AUIy9fGcBepxQCgKq1yXhY/0zDUbgUUB/lxIGoQCDEKLRwJyQw/BbNeY5NFlZGqA
+              3uPOoKhyMv5Pi/g5E4opSBx5W/lv3gKpB1cfpQIDAQABAoIBAQDGm2ep1EFjeXSj
+              oP8zJAk+Rk2IPv/pFr8aqGPwphc3sctgpzgBlK+J1gRAfCF3RmxzrOqfVxCzc8Nu
+              aNi30+oUB21g8IQ6HYo6Bg5oLHgihnihbaysQOBZ7RtOUHN18Spzz0pL2a/wCtYc
+              S8oGtOgshFzqOCFIykrsowUVYcDzPM7E7KTaAoGCOhoL02Nw2iqtfHWkK/CuiSEG
+              DoV4yLh6cSlSemKmN+kkcXICtbvAfLQFuKr1jUAC/3xW0MbnZtfkbbhb/0OBI1ri
+              nYKgZbe5D9ne8nuZrcMH7D5FetoS5Ax7SIIZWYxmXGx74mxbeQRyfTLwLXdOGRGC
+              up8VdHshAoGBAPpTH9q28SAgYKcQmCX+B3Aee/x1zmhfUPhYnGTcFQxMcfkUdTfx
+              oOJswWE+XRERkLxpRnIhpzgtJp2+pWhJsE6fFNMxML5fK5yeEF6J1EbCyGEwOtst
+              vvigLs5oR9MlbF7nzopRMViN43e5BjkUD22yI5EMUZW4ubqa8mIlsN3NAoGBANTd
+              73hywAubUnmlw4c2uoUzmINOxX+aUID87ONn0+fzY3Ug9LtJ6J0R88P4qY1wgdrU
+              QjCMFgzmCH9q1Am8W1FqJkjGS/tWgVOIrUyfBRJO+EIlMIellR6n9DXCw9LGeO2V
+              I7m6U1NWZGa8mtl/0S54QhNsfsp8p5twWV1tB7E5AoGBAKDzNXYRTnRTnRGOD+XN
+              scabMykeLfrZ3lvvzY7kGvxvYpC+YKf5ynILb0MxL/G7k44xOkRD8xqhnUSrwfqN
+              9rh2fJNV+3tMAeSPlQLUKBLfRquGsTEf9rwxcibw0c2nMEjNTvWMQugnQuxFoQSu
+              K0Vi1o96ljJoNbMP0Wzdwxy5AoGBAK1kuxRaJKVPuDbvF/6kTfsCtFEBcU8n3Du1
+              yyDSCoL+dx2J4tBMu/Z2ESKpAzP7WUtvaxswgSWwm2tvEZl8nMYMuXK+VFY/eMka
+              pE+tmOv497CpqoZUEswN85d3NxwSH58nxRoc9JMF5HLrXxecTkCUJP69eepm8ABl
+              2+WGUqXBAoGBANoU+NjYsC5XVdk37iGjjLlFdHVX6G9AB1n2DSFGxS1qzJrwYk0C
+              0kY+pDLzz9QLw+T7Sp6aochrgxZY97suGRnzw/jf4lVG48lg8d2dqXiqJGMmKLXh
+              9vN4F6/II8r+aEDkHJU07VCTXvOnE6zJaSbsJiGWaKOqFTw3GnTQYiok
+              -----END RSA PRIVATE KEY-----"

@@ -4,11 +4,22 @@ import "errors"
 
 type UserReq struct {
 	UserName string `json:"username" name:"用户名"`
-	PassWord string `g json:"password" name:"密码"`
+	PassWord string ` json:"password" name:"密码"`
 	Age      uint   `json:"age" name:"年龄"`
 	Tel      string `json:"tel" name:"手机号"`
 	Addr     string `json:"addr" name:"地址"`
 	Id       uint   `json:"id"`
+}
+
+func (r *UserReq) LoginVerification() error {
+	switch {
+	case r.UserName == "":
+		return errors.New("username is isValid")
+	case r.PassWord == "":
+		return errors.New("password is isValid")
+	default:
+		return nil
+	}
 }
 
 func (r *UserReq) CreateVerification() error {
@@ -67,7 +78,7 @@ func (r *UsersReq) IsValid() error {
 
 type UserPageReq struct {
 	UserName string `json:"username" name:"用户名"`
-	PassWord string `g json:"password" name:"密码"`
+	PassWord string `json:"password" name:"密码"`
 	Age      uint   `json:"age" name:"年龄"`
 	Tel      string `json:"tel" name:"手机号"`
 	Addr     string `json:"addr" name:"地址"`

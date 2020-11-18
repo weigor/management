@@ -1,13 +1,18 @@
 package dao
 
 import (
+	"context"
+	"errors"
+	"github.com/go-redis/redis/v8"
 	"github.com/jinzhu/gorm"
 	"management/common"
 	"management/model"
+	"time"
 )
 
 type UserDAO struct {
 	db *common.Orm
+	r  *redis.Client
 }
 
 func NewUserDAO(db *common.Orm) *UserDAO {
@@ -63,4 +68,33 @@ func (dao *UserDAO) BatchUpdateUsers(users []*model.User) error {
 	}
 	db.Commit()
 	return nil
+}
+
+func (dao *UserDAO) JwtCache(username, token string, time time.Duration) error {
+	return dao.r.Set(context.Background(), username, token, time).Err()
+}
+
+func (dao *UserDAO) GetToken(username string) (token string, err error) {
+	return dao.r.Get(context.Background(), username).Result()
+}
+
+func (dao *UserDAO) QueryUser(name string) (*model.User, error) {
+	temp := &model.User{}
+	err := dao.db.Where("user_name =?",name).Last(&temp).Error
+	if err == gorm.ErrRecordNotFound {
+		return nil, errors.New("帐号不存在")
+	}
+	if err != nil {
+		return nil, err
+	}
+	return temp, err
+}
+
+func (dao *UserDAO) UpdateUserToken(user map[string]interface{}) error {
+	temp := &model.User{}
+	err := dao.db.Where("user_name=?", user["user_name"].(string)).Last(&temp).Error
+	if err != nil && err != gorm.ErrRecordNotFound {
+		return err
+	}
+	return dao.db.Debug().Model(&model.User{}).Where("user_name=?", user["user_name"].(string)).Update(user).Error
 }

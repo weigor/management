@@ -19,6 +19,7 @@ func NewService() *Service {
 func buildService(s *Service) {
 	orm := common.MysqlInit()
 	userDao := dao.NewUserDAO(orm)
-	userService := service.NewUserService(userDao)
+	jwt:=common.NewJwt()
+	userService := service.NewUserService(userDao,jwt)
 	s.UserService = userService
 }

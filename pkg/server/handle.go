@@ -1,13 +1,22 @@
 package server
 
 import (
+	"crypto/rand"
+	"crypto/rsa"
+	"crypto/x509"
+	"encoding/base64"
+	"encoding/pem"
+	"errors"
 	"github.com/gin-gonic/gin"
+	"github.com/onsi/gomega/gbytes"
 	"go.uber.org/zap"
+	"io/ioutil"
 	"management/common"
 	"management/log"
 	"management/model"
 	serverModel "management/pkg/server/model"
 	"management/pkg/server/register"
+	"net/http"
 )
 
 type Handler struct {
@@ -17,7 +26,87 @@ type Handler struct {
 func NewHandler() *Handler {
 	return &Handler{Service: register.NewService()}
 }
+func (h *Handler) RsaDecrypt() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		body := c.Request.Body
+		if body == nil {
+			return
+		}
 
+		b, err := ioutil.ReadAll(body)
+		if err != nil {
+			log.Logger.Warn("RsaDecrypt", zap.Error(err))
+			common.HttpResponse400(c, err)
+			c.Abort()
+			return
+		}
+
+		b, err = base64.StdEncoding.DecodeString(string(b))
+		if err != nil {
+			log.Logger.Warn("RsaDecrypt", zap.Error(err))
+			common.HttpResponse400(c, err)
+			c.Abort()
+			return
+		}
+
+		jsonb, err := h.rsaDecrypt(b)
+		if err != nil {
+			log.Logger.Warn("RsaDecrypt", zap.Error(err))
+			common.HttpResponse400(c, err)
+			c.Abort()
+			return
+		}
+
+		c.Request.Body = gbytes.BufferWithBytes(jsonb)
+	}
+}
+
+func (h *Handler) rsaDecrypt(ciphertext []byte) ([]byte, error) {
+	key := []byte("-----BEGIN RSA PRIVATE KEY-----\n              MIIEpgIBAAKCAQEA0CXaTQE4ifUm2+tlH1oBLif6yWT7vRnnCqEvX8JUcmLQMrVu\n              9WVMZbKDHphGMt6dFtQpCaXcrjPyPLqouel3lbro8vgIuPNSoeE1OZVbVWElvZ2V\n              pEvSA1rPe0bZ5F6A99Ts0Rz6uulVQkIkMQoxc4KFgrmBk+3a3VALsZLcEHSCsnnZ\n              hnr6jYYSdh2DQvhIFqNaptFkEtb/xLLP9f0Xv2iVIq7wpMWByficDjzmuWxVeor+\n              AUIy9fGcBepxQCgKq1yXhY/0zDUbgUUB/lxIGoQCDEKLRwJyQw/BbNeY5NFlZGqA\n              3uPOoKhyMv5Pi/g5E4opSBx5W/lv3gKpB1cfpQIDAQABAoIBAQDGm2ep1EFjeXSj\n              oP8zJAk+Rk2IPv/pFr8aqGPwphc3sctgpzgBlK+J1gRAfCF3RmxzrOqfVxCzc8Nu\n              aNi30+oUB21g8IQ6HYo6Bg5oLHgihnihbaysQOBZ7RtOUHN18Spzz0pL2a/wCtYc\n              S8oGtOgshFzqOCFIykrsowUVYcDzPM7E7KTaAoGCOhoL02Nw2iqtfHWkK/CuiSEG\n              DoV4yLh6cSlSemKmN+kkcXICtbvAfLQFuKr1jUAC/3xW0MbnZtfkbbhb/0OBI1ri\n              nYKgZbe5D9ne8nuZrcMH7D5FetoS5Ax7SIIZWYxmXGx74mxbeQRyfTLwLXdOGRGC\n              up8VdHshAoGBAPpTH9q28SAgYKcQmCX+B3Aee/x1zmhfUPhYnGTcFQxMcfkUdTfx\n              oOJswWE+XRERkLxpRnIhpzgtJp2+pWhJsE6fFNMxML5fK5yeEF6J1EbCyGEwOtst\n              vvigLs5oR9MlbF7nzopRMViN43e5BjkUD22yI5EMUZW4ubqa8mIlsN3NAoGBANTd\n              73hywAubUnmlw4c2uoUzmINOxX+aUID87ONn0+fzY3Ug9LtJ6J0R88P4qY1wgdrU\n              QjCMFgzmCH9q1Am8W1FqJkjGS/tWgVOIrUyfBRJO+EIlMIellR6n9DXCw9LGeO2V\n              I7m6U1NWZGa8mtl/0S54QhNsfsp8p5twWV1tB7E5AoGBAKDzNXYRTnRTnRGOD+XN\n              scabMykeLfrZ3lvvzY7kGvxvYpC+YKf5ynILb0MxL/G7k44xOkRD8xqhnUSrwfqN\n              9rh2fJNV+3tMAeSPlQLUKBLfRquGsTEf9rwxcibw0c2nMEjNTvWMQugnQuxFoQSu\n              K0Vi1o96ljJoNbMP0Wzdwxy5AoGBAK1kuxRaJKVPuDbvF/6kTfsCtFEBcU8n3Du1\n              yyDSCoL+dx2J4tBMu/Z2ESKpAzP7WUtvaxswgSWwm2tvEZl8nMYMuXK+VFY/eMka\n              pE+tmOv497CpqoZUEswN85d3NxwSH58nxRoc9JMF5HLrXxecTkCUJP69eepm8ABl\n              2+WGUqXBAoGBANoU+NjYsC5XVdk37iGjjLlFdHVX6G9AB1n2DSFGxS1qzJrwYk0C\n              0kY+pDLzz9QLw+T7Sp6aochrgxZY97suGRnzw/jf4lVG48lg8d2dqXiqJGMmKLXh\n              9vN4F6/II8r+aEDkHJU07VCTXvOnE6zJaSbsJiGWaKOqFTw3GnTQYiok\n              -----END RSA PRIVATE KEY-----")
+	block, _ := pem.Decode(key)
+	if block == nil {
+		return nil, errors.New("private key error!")
+	}
+
+	priv, err := x509.ParsePKCS1PrivateKey(block.Bytes) // 解析pem.Decode（）返回的Block指针实例
+	if err != nil {
+		return nil, err
+	}
+
+	return rsa.DecryptPKCS1v15(rand.Reader, priv, ciphertext)
+}
+
+func (h *Handler) TokenMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		token := c.Request.Header.Get("token")
+		name := c.Request.Header.Get("name")
+		err := h.UserService.Auth(name, token)
+		if err == nil {
+			c.Set("name", name)
+			return
+		}
+		common.HttpResponse400(c, err)
+		c.Abort()
+	}
+}
+func (h *Handler) Cors() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		method := c.Request.Method
+
+		c.Header("Access-Control-Allow-Origin", "*")
+		c.Header("Access-Control-Allow-Headers", "Content-Type,AccessToken,X-CSRF-Token, Authorization, Token")
+		c.Header("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+		c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type")
+		c.Header("Access-Control-Allow-Credentials", "true")
+
+		//放行所有OPTIONS方法
+		if method == "OPTIONS" {
+			c.AbortWithStatus(http.StatusNoContent)
+		}
+		// 处理请求
+		c.Next()
+	}
+}
 func (h *Handler) QueryUserList() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		req := &serverModel.UserPageReq{}
@@ -45,7 +134,7 @@ func (h *Handler) QueryUserList() gin.HandlerFunc {
 			common.HttpResponse400(c, common.SystemErr)
 			return
 		}
-		common.HttpResponse200(c, ctx.GetResult())
+		common.HttpResponse200(c, ctx.GetResult(), http.StatusOK)
 	}
 }
 
@@ -76,7 +165,7 @@ func (h *Handler) CreateUser() gin.HandlerFunc {
 			common.HttpResponse400(c, common.SystemErr)
 			return
 		}
-		common.HttpResponse200(c, nil)
+		common.HttpResponse200(c, nil, http.StatusOK)
 	}
 }
 
@@ -110,7 +199,7 @@ func (h *Handler) UpdateUser() gin.HandlerFunc {
 			common.HttpResponse400(c, common.ParamsInvalidErr)
 			return
 		}
-		common.HttpResponse200(c, nil)
+		common.HttpResponse200(c, nil, http.StatusOK)
 	}
 }
 
@@ -144,7 +233,7 @@ func (h *Handler) DeleteUser() gin.HandlerFunc {
 			common.HttpResponse400(c, common.SystemErr)
 			return
 		}
-		common.HttpResponse200(c, nil)
+		common.HttpResponse200(c, nil, http.StatusOK)
 	}
 }
 
@@ -185,6 +274,34 @@ func (h *Handler) BatchUpdateBatch() gin.HandlerFunc {
 			common.HttpResponse400(c, common.SystemErr)
 			return
 		}
-		common.HttpResponse200(c, nil)
+		common.HttpResponse200(c, nil, http.StatusOK)
+	}
+}
+
+func (h *Handler) Login() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		req := &serverModel.UserReq{}
+		if err := c.BindJSON(req); err != nil {
+			log.Logger.Error("#Login property resolution failed ", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsInvalidErr)
+			return
+		}
+		if err := req.LoginVerification(); err != nil {
+			log.Logger.Error("#Login  property validation error ", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsValidateErr)
+			return
+		}
+		ctx := &serverModel.UserCtx{
+			Req: &model.User{
+				UserName: req.UserName,
+				PassWord: req.PassWord,
+			},
+		}
+		if err := h.UserService.Login(ctx); err != nil {
+			log.Logger.Error("#Login ", zap.Any("req", req), zap.Error(err))
+			common.HttpResponse400(c, common.SystemErr)
+			return
+		}
+		common.HttpResponse200(c, ctx.GetResult(), http.StatusOK)
 	}
 }
