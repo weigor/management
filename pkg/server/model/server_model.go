@@ -53,11 +53,11 @@ func (r *UserReq) UpdateVerification() error {
 		return nil
 	}
 }
-
 func (r *UserReq) DeleteVerification() error {
 	switch {
 	case r.Id <= 0:
 		return errors.New("id is isValid")
+
 	default:
 		return nil
 	}
@@ -90,6 +90,64 @@ func (r *UserPageReq) QueryVerification() error {
 	switch {
 	case r.Page < 0:
 		return errors.New("page_no is isValid")
+	default:
+		return nil
+	}
+}
+
+type LiveReq struct {
+	Head     string `json:"head"`
+	Remark   string `json:"remark"`
+	Photo    string `json:"photo"`
+	Username string `json:"username"`
+	Id       uint   `json:"id"`
+}
+
+func (r *LiveReq) CreateVerification() error {
+	switch {
+	case r.Head == "":
+		return errors.New("head is isValid")
+	case r.Username == "":
+		return errors.New("username is isValid")
+	default:
+		return nil
+	}
+}
+
+func (r *LiveReq) UpdateVerification() error {
+	switch {
+	case r.Head == "":
+		return errors.New("head is isValid")
+	case r.Username == "":
+		return errors.New("username is isValid")
+	case r.Id <= 0:
+		return errors.New("id is isValid")
+	default:
+		return nil
+	}
+}
+func (r *LiveReq) DeleteVerification() error {
+	switch {
+	case r.Id <= 0:
+		return errors.New("id is isValid")
+
+	default:
+		return nil
+	}
+}
+
+type LivePageReq struct {
+	Head     string `json:"head"`
+	Remark   string `json:"remark"`
+	Photo    string `json:"photo"`
+	Username string `json:"username"`
+	Page     int    `json:"page_no"`
+}
+
+func (r *LivePageReq) QueryVerification() error {
+	switch {
+	case r.Page < 0:
+		return errors.New("page is isValid")
 	default:
 		return nil
 	}

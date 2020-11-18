@@ -51,7 +51,7 @@ func (dao *UserDAO) UpdateUser(user *model.User) error {
 	if temp.ID != user.ID && temp.ID != 0 {
 		return common.UpdateErr
 	}
-	return dao.db.Model(&model.User{}).Where("id=?", user.ID).Update(user).Error
+	return dao.db.Model(&model.User{}).Where("id=?", user.ID).Updates(user).Error
 }
 
 func (dao *UserDAO) DeleteUser(id uint) error {

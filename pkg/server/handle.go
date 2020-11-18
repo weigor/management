@@ -120,7 +120,7 @@ func (h *Handler) QueryUserList() gin.HandlerFunc {
 			common.HttpResponse400(c, common.ParamsValidateErr)
 			return
 		}
-		ctx := &serverModel.UserCtx{
+		ctx := &serverModel.CommonCtx{
 			Req: &model.User{
 				UserName: req.UserName,
 				PassWord: req.PassWord,
@@ -151,7 +151,7 @@ func (h *Handler) CreateUser() gin.HandlerFunc {
 			common.HttpResponse400(c, common.ParamsValidateErr)
 			return
 		}
-		ctx := &serverModel.UserCtx{
+		ctx := &serverModel.CommonCtx{
 			Req: &model.User{
 				UserName: req.UserName,
 				PassWord: req.PassWord,
@@ -182,7 +182,7 @@ func (h *Handler) UpdateUser() gin.HandlerFunc {
 			common.HttpResponse400(c, common.ParamsValidateErr)
 			return
 		}
-		ctx := &serverModel.UserCtx{
+		ctx := &serverModel.CommonCtx{
 			Req: &model.User{
 				UserName: req.UserName,
 				PassWord: req.PassWord,
@@ -216,7 +216,7 @@ func (h *Handler) DeleteUser() gin.HandlerFunc {
 			common.HttpResponse400(c, common.ParamsInvalidErr)
 			return
 		}
-		ctx := &serverModel.UserCtx{
+		ctx := &serverModel.CommonCtx{
 			Req: &model.User{
 				UserName: req.UserName,
 				PassWord: req.PassWord,
@@ -266,7 +266,7 @@ func (h *Handler) BatchUpdateBatch() gin.HandlerFunc {
 				},
 			}
 		}
-		ctx := &serverModel.UserCtx{
+		ctx := &serverModel.CommonCtx{
 			Req: temps,
 		}
 		if err := h.UserService.BatchUpdate(ctx); err != nil {
@@ -291,7 +291,7 @@ func (h *Handler) Login() gin.HandlerFunc {
 			common.HttpResponse400(c, common.ParamsValidateErr)
 			return
 		}
-		ctx := &serverModel.UserCtx{
+		ctx := &serverModel.CommonCtx{
 			Req: &model.User{
 				UserName: req.UserName,
 				PassWord: req.PassWord,
@@ -303,5 +303,134 @@ func (h *Handler) Login() gin.HandlerFunc {
 			return
 		}
 		common.HttpResponse200(c, ctx.GetResult(), http.StatusOK)
+	}
+}
+
+func (h *Handler) CreateLive() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		req := &serverModel.LiveReq{}
+		if err := c.BindJSON(req); err != nil {
+			log.Logger.Error("#CreateLive property resolution failed ", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsInvalidErr)
+			return
+		}
+		if err := req.CreateVerification(); err != nil {
+			log.Logger.Error("#CreateLive  property validation error ", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsValidateErr)
+			return
+		}
+
+		ctx := &serverModel.CommonCtx{
+			Req: &model.Live{
+				Head:     req.Head,
+				Photo:    req.Photo,
+				Username: req.Username,
+				BaseModel: &model.BaseModel{
+					Remark: req.Remark,
+				},
+			},
+		}
+		if err := h.LiveService.CreateLive(ctx); err != nil {
+			log.Logger.Error("#CreateLive ", zap.Any("req", req), zap.Error(err))
+			common.HttpResponse400(c, common.SystemErr)
+			return
+		}
+		common.HttpResponse200(c, nil, http.StatusOK)
+	}
+}
+
+func (h *Handler) QueryLiveList() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		req := &serverModel.LivePageReq{}
+		if err := c.BindJSON(req); err != nil {
+			log.Logger.Error("#QueryLiveList property resolution failed ", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsInvalidErr)
+			return
+		}
+		if err := req.QueryVerification(); err != nil {
+			log.Logger.Error("#QueryLiveList  property validation error ", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsValidateErr)
+			return
+		}
+		ctx := &serverModel.CommonCtx{
+			Req: &model.Live{
+				Head:     req.Head,
+				Photo:    req.Photo,
+				Username: req.Username,
+				BaseModel: &model.BaseModel{
+					Remark: req.Remark,
+				},
+			},
+		}
+		if err := h.LiveService.QueryLiveList(ctx); err != nil {
+			log.Logger.Error("#QueryUserList ", zap.Any("req", req), zap.Error(err))
+			common.HttpResponse400(c, common.SystemErr)
+			return
+		}
+		common.HttpResponse200(c, ctx.GetResult(), http.StatusOK)
+	}
+}
+
+func (h *Handler) UpdateLive() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		req := &serverModel.LiveReq{}
+		if err := c.BindJSON(req); err != nil {
+			log.Logger.Error("#UpdateLive property resolution failed", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsInvalidErr)
+			return
+		}
+		if err := req.UpdateVerification(); err != nil {
+			log.Logger.Error("#UpdateLive property validation error", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsValidateErr)
+			return
+		}
+		ctx := &serverModel.CommonCtx{
+			Req: &model.Live{
+				Head:     req.Head,
+				Photo:    req.Photo,
+				Username: req.Username,
+				BaseModel: &model.BaseModel{
+					Remark: req.Remark,
+					ID:     req.Id,
+				},
+			},
+		}
+		if err := h.LiveService.UpdateLive(ctx); err != nil {
+			log.Logger.Error("#UpdateLive ", zap.Any("req", req), zap.Error(err))
+			common.HttpResponse400(c, common.ParamsInvalidErr)
+			return
+		}
+		common.HttpResponse200(c, nil, http.StatusOK)
+	}
+}
+
+func (h *Handler) DeleteLive() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		req := &serverModel.LiveReq{}
+		if err := c.BindJSON(req); err != nil {
+			log.Logger.Error("#DeleteLive property validation error", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsValidateErr)
+			return
+		}
+		if err := req.DeleteVerification(); err != nil {
+			log.Logger.Error("#DeleteLive  property validation error", zap.Error(err))
+			common.HttpResponse400(c, common.ParamsInvalidErr)
+			return
+		}
+		ctx := &serverModel.CommonCtx{
+			Req: &model.Live{
+
+				BaseModel: &model.BaseModel{
+					Remark: req.Remark,
+					ID:     req.Id,
+				},
+			},
+		}
+		if err := h.LiveService.DeleteLive(ctx); err != nil {
+			log.Logger.Error("#DeleteLive ", zap.Any("req", req), zap.Error(err))
+			common.HttpResponse400(c, common.SystemErr)
+			return
+		}
+		common.HttpResponse200(c, nil, http.StatusOK)
 	}
 }

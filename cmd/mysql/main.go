@@ -60,6 +60,7 @@ func MysqlInit(s string) *Orm {
 func tables() []interface{} {
 	return []interface{}{
 		&model.User{},
+		&model.Live{},
 	}
 }
 

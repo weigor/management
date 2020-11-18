@@ -1,6 +1,6 @@
 package service
 
-type UserCtx interface {
+type CommonCtx interface {
 	Param() interface{}
 	GetResult() interface{}
 	SetResult(interface{})

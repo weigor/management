@@ -8,6 +8,7 @@ import (
 
 type Service struct {
 	UserService *service.UserService
+	LiveService *service.LiveService
 }
 
 func NewService() *Service {
@@ -19,7 +20,10 @@ func NewService() *Service {
 func buildService(s *Service) {
 	orm := common.MysqlInit()
 	userDao := dao.NewUserDAO(orm)
-	jwt:=common.NewJwt()
-	userService := service.NewUserService(userDao,jwt)
+	liveDao := dao.NewLiveDAO(orm)
+	jwt := common.NewJwt()
+	userService := service.NewUserService(userDao, jwt)
+	liveService := service.NewLiveService(liveDao)
 	s.UserService = userService
+	s.LiveService = liveService
 }

@@ -19,29 +19,29 @@ type UserDAO interface {
 }
 
 type UserService struct {
-	UserDao UserDAO
-	Jwt     *common.Jwt
+	userDao UserDAO
+	jwt     *common.Jwt
 }
 
 func NewUserService(dao UserDAO, jwt *common.Jwt) *UserService {
-	return &UserService{UserDao: dao, Jwt: jwt}
+	return &UserService{userDao: dao, jwt: jwt}
 }
 
-func (n *UserService) Create(ctx UserCtx) error {
+func (n *UserService) Create(ctx CommonCtx) error {
 	req := ctx.Param().(*model.User)
 	//生成token
-	token, err := n.Jwt.CreateToken(req.UserName)
+	token, err := n.jwt.CreateToken(req.UserName)
 	if err != nil {
 		return err
 	}
 	req.Token = token
 	req.ExpireTime = time.Now().Add(time.Hour * 24 * 30).Unix()
-	return n.UserDao.CreateUser(req)
+	return n.userDao.CreateUser(req)
 }
 
 func (n *UserService) Auth(name, token string) error {
 	// step1 解析token
-	tokenName, err := n.Jwt.DecodeToken(token)
+	tokenName, err := n.jwt.DecodeToken(token)
 	if err != nil {
 		return err
 	}
@@ -50,7 +50,7 @@ func (n *UserService) Auth(name, token string) error {
 		return common.TokenErr
 	}
 
-	user, err := n.UserDao.QueryUser(name)
+	user, err := n.userDao.QueryUser(name)
 	if err != nil {
 		return err
 	}
@@ -62,9 +62,9 @@ func (n *UserService) Auth(name, token string) error {
 	return nil
 }
 
-func (n *UserService) Login(ctx UserCtx) error {
+func (n *UserService) Login(ctx CommonCtx) error {
 	req := ctx.Param().(*model.User)
-	user, err := n.UserDao.QueryUser(req.UserName)
+	user, err := n.userDao.QueryUser(req.UserName)
 	if err != nil {
 		return err
 	}
@@ -72,17 +72,17 @@ func (n *UserService) Login(ctx UserCtx) error {
 		return common.PassWordErr
 	}
 	//生成token
-	token, err := n.Jwt.CreateToken(req.UserName)
+	token, err := n.jwt.CreateToken(req.UserName)
 
 	//更新token
-	err = n.UserDao.UpdateUserToken(map[string]interface{}{"user_name": user.UserName, "token": token})
+	err = n.userDao.UpdateUserToken(map[string]interface{}{"user_name": user.UserName, "token": token})
 	ctx.SetResult(token)
 	return err
 }
 
-func (n *UserService) Query(ctx UserCtx) error {
+func (n *UserService) Query(ctx CommonCtx) error {
 	req := ctx.Param().(*model.User)
-	users, err := n.UserDao.QueryUserList(req, ctx.GetPage(), ctx.GetPageSize())
+	users, err := n.userDao.QueryUserList(req, ctx.GetPage(), ctx.GetPageSize())
 	if err != nil {
 		return err
 	}
@@ -90,15 +90,15 @@ func (n *UserService) Query(ctx UserCtx) error {
 	return err
 }
 
-func (n *UserService) Update(ctx UserCtx) error {
+func (n *UserService) Update(ctx CommonCtx) error {
 	req := ctx.Param().(*model.User)
-	return n.UserDao.UpdateUser(req)
+	return n.userDao.UpdateUser(req)
 }
 
-func (n *UserService) Delete(ctx UserCtx) error {
-	return n.UserDao.DeleteUser(ctx.Param().(*model.User).ID)
+func (n *UserService) Delete(ctx CommonCtx) error {
+	return n.userDao.DeleteUser(ctx.Param().(*model.User).ID)
 }
 
-func (n *UserService) BatchUpdate(ctx UserCtx) error {
-	return n.UserDao.BatchUpdateUsers(ctx.Param().([]*model.User))
+func (n *UserService) BatchUpdate(ctx CommonCtx) error {
+	return n.userDao.BatchUpdateUsers(ctx.Param().([]*model.User))
 }
