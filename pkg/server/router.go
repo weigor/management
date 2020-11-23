@@ -9,7 +9,7 @@ func (s *Server) newRouter() *gin.Engine {
 	e := gin.New()
 	e.Use(s.handler.Cors())
 	router := e.Group("/api/v1/")
-	//	router.Use(s.handler.RsaDecrypt())
+	router.Use(s.handler.RsaDecrypt())
 	{
 		router.POST("user/login", s.handler.Login())
 	}
