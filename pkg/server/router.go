@@ -7,6 +7,7 @@ import (
 func (s *Server) newRouter() *gin.Engine {
 	gin.SetMode(gin.ReleaseMode)
 	e := gin.New()
+	e.Use(s.handler.Cors())
 	router := e.Group("/api/v1/")
 	//	router.Use(s.handler.RsaDecrypt())
 	{
@@ -14,7 +15,6 @@ func (s *Server) newRouter() *gin.Engine {
 	}
 	group := e.Group("/api/")
 	group.Use(s.handler.TokenMiddleware())
-	group.Use(s.handler.Cors())
 	{
 		//group.Use(JWTAuth())
 		group.POST("user/create", s.handler.CreateUser())
