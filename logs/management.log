@@ -138,3 +138,15 @@
 {"level":"info","time":"2020-11-23T17:41:29.124+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
 {"level":"error","time":"2020-11-23T17:41:33.778+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:299","msg":"#Login ","management":"management","req":{"username":"gg","password":"12","age":0,"tel":"","addr":"","id":0},"error":"密码错误"}
 {"level":"error","time":"2020-11-23T17:42:19.972+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:299","msg":"#Login ","management":"management","req":{"username":"gg","password":"12","age":0,"tel":"","addr":"","id":0},"error":"密码错误"}
+{"level":"info","time":"2020-11-23T18:00:53.929+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-23T18:00:53.934+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"warn","time":"2020-11-23T18:01:44.379+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:54","msg":"RsaDecrypt","management":"management","error":"crypto/rsa: decryption error"}
+{"level":"warn","time":"2020-11-23T18:01:55.183+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:54","msg":"RsaDecrypt","management":"management","error":"crypto/rsa: decryption error"}
+{"level":"warn","time":"2020-11-23T18:06:33.907+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:54","msg":"RsaDecrypt","management":"management","error":"crypto/rsa: decryption error"}
+{"level":"warn","time":"2020-11-23T18:09:21.788+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:54","msg":"RsaDecrypt","management":"management","error":"crypto/rsa: decryption error"}
+{"level":"info","time":"2020-11-23T18:10:44.263+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-23T18:10:44.267+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}
+{"level":"warn","time":"2020-11-23T18:10:52.874+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:46","msg":"RsaDecrypt","management":"management","error":"illegal base64 data at input byte 0"}
+{"level":"warn","time":"2020-11-23T18:10:53.461+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:46","msg":"RsaDecrypt","management":"management","error":"illegal base64 data at input byte 0"}
+{"level":"warn","time":"2020-11-23T18:11:00.399+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:46","msg":"RsaDecrypt","management":"management","error":"illegal base64 data at input byte 0"}
+{"level":"error","time":"2020-11-23T18:12:14.883+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:299","msg":"#Login ","management":"management","req":{"username":"gg","password":"12","age":0,"tel":"","addr":"","id":0},"error":"密码错误"}

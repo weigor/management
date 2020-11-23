@@ -96,5 +96,5 @@ func (dao *UserDAO) UpdateUserToken(user map[string]interface{}) error {
 	if err != nil && err != gorm.ErrRecordNotFound {
 		return err
 	}
-	return dao.db.Debug().Model(&model.User{}).Where("user_name=?", user["user_name"].(string)).Update(user).Error
+	return dao.db.Model(&model.User{}).Where("user_name=?", user["user_name"].(string)).Update(user).Error
 }
