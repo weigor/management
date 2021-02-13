@@ -21,17 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5364b7ba-4229-4a12-8627-3f1be3cf0992" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/gin_response.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/gin_response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/logs/management.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/logs/management.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/db.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/management.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/management.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/dao/user_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/dao/user_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/dao/live_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/dao/live_dao.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/server/handle.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/handle.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/server/model/server_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/model/server_model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/server/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/service/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/service/user_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sale/main.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +40,13 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GOROOT" path="D:\Go" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jiZxLBlRW8fOWpbhB17g0V7LrJ" />
@@ -64,7 +64,13 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/下载/moban3102" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../travel" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
@@ -164,13 +170,15 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="686" y="346" width="610" height="421" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605004056595">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="454" y="221" width="547" height="292" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613133809697">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="454" y="221" width="547" height="292" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1613133809697" />
     <state x="686" y="346" width="610" height="421" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1605004056595" />
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605251624538">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="523" y="196" width="353" height="340" key="FileChooserDialogImpl" timestamp="1613199568991">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="523" y="196" width="353" height="340" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1613199568991" />
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1605251624538" />
     <state width="1794" height="259" key="GridCell.Tab.0.bottom" timestamp="1604886015497">
       <screen x="72" y="27" width="1848" height="1053" />
@@ -188,18 +196,6 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1794" height="259" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604886015496" />
-    <state x="477" y="188" width="1037" height="737" key="SettingsEditor" timestamp="1604463208537">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="477" y="188" width="1037" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1604463208537" />
-    <state x="688" y="239" width="615" height="628" key="find.popup" timestamp="1604473443434">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="688" y="239" width="615" height="628" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1604473443434" />
-    <state x="753" y="444" width="476" height="226" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1604462957403">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="753" y="444" width="476" height="226" key="git4idea.remote.GitConfigureRemotesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1604462957403" />
     <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604634211651">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

@@ -339,29 +339,27 @@ func (h *Handler) CreateLive() gin.HandlerFunc {
 
 func (h *Handler) QueryLiveList() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		req := &serverModel.LivePageReq{}
-		if err := c.BindJSON(req); err != nil {
-			log.Logger.Error("#QueryLiveList property resolution failed ", zap.Error(err))
-			common.HttpResponse400(c, common.ParamsInvalidErr)
-			return
-		}
-		if err := req.QueryVerification(); err != nil {
-			log.Logger.Error("#QueryLiveList  property validation error ", zap.Error(err))
-			common.HttpResponse400(c, common.ParamsValidateErr)
-			return
-		}
+		//req := &serverModel.LivePageReq{}
+		//if err := c.BindJSON(req); err != nil {
+		//	log.Logger.Error("#QueryLiveList property resolution failed ", zap.Error(err))
+		//	common.HttpResponse400(c, common.ParamsInvalidErr)
+		//	return
+		//}
+		//if err := req.QueryVerification(); err != nil {
+		//	log.Logger.Error("#QueryLiveList  property validation error ", zap.Error(err))
+		//	common.HttpResponse400(c, common.ParamsValidateErr)
+		//	return
+		//}
 		ctx := &serverModel.CommonCtx{
 			Req: &model.Live{
-				Head:     req.Head,
-				Photo:    req.Photo,
-				Username: req.Username,
+
 				BaseModel: &model.BaseModel{
-					Remark: req.Remark,
+
 				},
 			},
 		}
 		if err := h.LiveService.QueryLiveList(ctx); err != nil {
-			log.Logger.Error("#QueryUserList ", zap.Any("req", req), zap.Error(err))
+			log.Logger.Error("#QueryUserList ", zap.Any("req", ctx), zap.Error(err))
 			common.HttpResponse400(c, common.SystemErr)
 			return
 		}

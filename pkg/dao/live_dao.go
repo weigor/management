@@ -21,15 +21,15 @@ func (dao *LiveDAO) CreateLive(live *model.Live) error {
 func (dao *LiveDAO) QueryLiveList(live *model.Live, pageNo, pageSize int) ([]*model.Live, error) {
 	var lives []*model.Live
 	if pageSize <= 0 {
-		pageSize = 10
+		pageSize = 10000
 	}
 	if pageNo == 0 {
-		err := dao.db.Where(live).Find(&lives).Error
+		err := dao.db.Where(live).Order("created_at").Find(&lives).Error
 		if err != nil {
 			return nil, err
 		}
 	}
-	return lives, dao.db.Where(live).Find(&lives).Limit(pageSize).Offset((pageNo - 1) * pageSize).Error
+	return lives, dao.db.Where(live).Order("created_at").Find(&lives).Limit(pageSize).Offset((pageNo - 1) * pageSize).Error
 
 }
 

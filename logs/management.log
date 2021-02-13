@@ -150,3 +150,16 @@
 {"level":"warn","time":"2020-11-23T18:10:53.461+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:46","msg":"RsaDecrypt","management":"management","error":"illegal base64 data at input byte 0"}
 {"level":"warn","time":"2020-11-23T18:11:00.399+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:46","msg":"RsaDecrypt","management":"management","error":"illegal base64 data at input byte 0"}
 {"level":"error","time":"2020-11-23T18:12:14.883+0800","linenum":"/home/ww/go/src/management/pkg/server/handle.go:299","msg":"#Login ","management":"management","req":{"username":"gg","password":"12","age":0,"tel":"","addr":"","id":0},"error":"密码错误"}
+{"level":"info","time":"2020-11-23T21:17:30.619+0800","linenum":"D:/workspace/man/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-23T21:18:37.699+0800","linenum":"D:/workspace/man/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-23T21:19:29.833+0800","linenum":"D:/workspace/man/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-23T21:20:04.629+0800","linenum":"D:/workspace/man/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}
+{"level":"info","time":"2021-02-12T21:32:45.930+0800","linenum":"C:/Users/Administrator/Desktop/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2021-02-12T21:32:47.036+0800","linenum":"C:/Users/Administrator/Desktop/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}
+{"level":"warn","time":"2021-02-12T21:33:10.019+0800","linenum":"C:/Users/Administrator/Desktop/management/pkg/server/handle.go:46","msg":"RsaDecrypt","management":"management","error":"illegal base64 data at input byte 0"}
+{"level":"info","time":"2021-02-12T22:27:10.731+0800","linenum":"C:/Users/Administrator/Desktop/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2021-02-12T22:27:11.197+0800","linenum":"C:/Users/Administrator/Desktop/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}
+{"level":"info","time":"2021-02-13T14:45:46.955+0800","linenum":"C:/Users/Administrator/Desktop/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2021-02-13T14:45:47.264+0800","linenum":"C:/Users/Administrator/Desktop/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}
+{"level":"info","time":"2021-02-13T17:28:26.657+0800","linenum":"C:/Users/Administrator/Desktop/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2021-02-13T17:28:26.869+0800","linenum":"C:/Users/Administrator/Desktop/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}

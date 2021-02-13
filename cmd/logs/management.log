@@ -4,3 +4,12 @@
 {"level":"info","time":"2020-11-13T23:18:53.418+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
 {"level":"info","time":"2020-11-13T23:19:01.031+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
 {"level":"info","time":"2020-11-13T23:19:01.169+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8080"}
+{"level":"info","time":"2020-11-24T09:48:41.362+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-24T09:50:18.615+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-24T10:13:59.811+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-24T10:15:56.293+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-24T10:15:56.596+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}
+{"level":"info","time":"2020-11-24T10:48:22.723+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-24T10:48:22.760+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}
+{"level":"info","time":"2020-11-24T11:33:08.746+0800","linenum":"/home/ww/go/src/management/cmd/main.go:20","msg":"","management":"management","log":"启动成功"}
+{"level":"info","time":"2020-11-24T11:33:08.748+0800","linenum":"/home/ww/go/src/management/pkg/server/server.go:26","msg":"start","management":"management","addr":":8081"}
